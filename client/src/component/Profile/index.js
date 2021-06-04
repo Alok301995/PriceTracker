@@ -3,6 +3,7 @@ import "./style.css";
 import React, { useState, useEffect } from "react";
 import Graph from "../Graph/index";
 import BrandIcons from "../../service/images";
+import Loader from "react-loader-spinner";
 
 const Profile = (props) => {
   // Main
@@ -13,6 +14,7 @@ const Profile = (props) => {
   const [ongoingTask, setOngoingTask] = useState([]);
   const [trackedTask, setTrackedTask] = useState([]);
   const [notificationTask, setNotificationTask] = useState([]);
+  const [onLoding, setOnLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -32,6 +34,7 @@ const Profile = (props) => {
           });
           setOngoingTask(ongoingTask);
           setTrackedTask(trackedTask);
+          setOnLoading(false);
         }
         setNotificationTask(notification.data);
       } catch (error) {
@@ -39,6 +42,8 @@ const Profile = (props) => {
       }
     }
     fetchData();
+
+    return () => {};
   }, []);
 
   // End of Main
@@ -128,6 +133,20 @@ const Profile = (props) => {
       </div>
 
       {/* Info Tiles */}
+      {onLoding ? (
+        <div className="h-screen flex justify-center ">
+          <Loader
+            className="mt-24"
+            type="TailSpin"
+            color="rgb(76, 76, 76)"
+            height={50}
+            width={50}
+            timeout={30000} //3 secs
+          />
+        </div>
+      ) : (
+        false
+      )}
 
       {ongoing &&
         ongoingTask.map((element, index) => {

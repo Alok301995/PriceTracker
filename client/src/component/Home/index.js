@@ -26,16 +26,19 @@ const Home = (props) => {
   const onUrlSubmit = async (e) => {
     e.preventDefault();
     setResponseLoaded(false);
+
     setServerResponse([]);
     if (url.length === 0) {
       setPlaceholder("Product URL/Link Empty");
       return;
     } else {
+      setResponseLoading(true);
       const data = { url: url };
       try {
         const response = await axios.post("/url", data);
         setServerResponse(response.data);
         setResponseLoaded(true);
+        setResponseLoading(false);
 
         return;
       } catch (error) {
@@ -99,7 +102,7 @@ const Home = (props) => {
   // End of Main function
 
   return (
-    <div className="home overflow-x-hidden h-auto  scrollbar-hide  flex flex-col justify-center items-center my-8 ">
+    <div className="home  overflow-x-hidden h-auto  scrollbar-hide  flex flex-col  items-center my-8">
       <div className="flex flex-col w-screen items-center ">
         <h1 className="text-2xl md:text-3xl lg:text-3xl text-gray-800 font-medium">
           Price Tracker
@@ -119,10 +122,21 @@ const Home = (props) => {
             value={url}
           />
           <button
-            className="search-btn bg-blue-500 font-semibold px-4 md:px-4 md:text-base lg:px-6 text-sm text-white rounded-r-sm rounded-l-none outline-none "
+            className="search-btn bg-blue-500 font-semibold px-4 md:px-4 md:text-base lg:px-6 text-sm text-white rounded-r-sm rounded-l-none outline-none focus:outline-none hover:shadow-md "
             onClick={onUrlSubmit}
           >
-            Submit
+            {responseLoading ? (
+              <Loader
+                className="p-1"
+                type="TailSpin"
+                color="rgb(255,255,255)"
+                height={25}
+                width={25}
+                timeout={30000} //3 secs
+              />
+            ) : (
+              "Submit"
+            )}
           </button>
         </div>
       </div>
