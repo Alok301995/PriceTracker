@@ -48,15 +48,15 @@ const Profile = (props) => {
 
   // End of Main
   return (
-    <div className="profile scrollbar-hide pt-2 h-screen bg-white">
-      <div className="border border-gray-300 mx-2 rounded-sm mb-8 md:w-11/12 md:mx-auto">
+    <div className="profile scrollbar-hide pt-2 h-auto bg-white">
+      <div className="profile__header  mx-2 rounded-sm mb-8 md:w-11/12 md:mx-auto">
         <div className="flex justify-between items-center px-2 py-1">
           <div className=" p-1 md:w-1/2 ">
             <span
               className={
                 ongoing
-                  ? "text-xs px-2 lg:text-lg cursor-pointer text-blue-600 "
-                  : "text-xs px-2 lg:text-lg cursor-pointer "
+                  ? "text-xs px-2 lg:text-lg cursor-pointer text-blue-600 font-medium "
+                  : "text-xs px-2 lg:text-lg cursor-pointer  text-gray-900 font-medium"
               }
               onClick={() => {
                 setTracked(false);
@@ -69,8 +69,8 @@ const Profile = (props) => {
             <span
               className={
                 tracked
-                  ? "text-xs px-2 lg:text-lg cursor-pointer text-blue-600 "
-                  : "text-xs px-2 lg:text-lg cursor-pointer "
+                  ? "text-xs px-2 lg:text-lg cursor-pointer text-blue-600 font-medium "
+                  : "text-xs px-2 lg:text-lg cursor-pointer text-gray-900 font-medium "
               }
               onClick={() => {
                 setTracked(true);
@@ -83,8 +83,8 @@ const Profile = (props) => {
             <span
               className={
                 Notification
-                  ? "text-xs px-2 lg:text-lg cursor-pointer text-blue-600 "
-                  : "text-xs px-2 lg:text-lg cursor-pointer "
+                  ? "text-xs px-2 lg:text-lg cursor-pointer text-blue-600 font-medium "
+                  : "text-xs px-2 lg:text-lg cursor-pointer text-gray-900 font-medium"
               }
               onClick={() => {
                 setTracked(false);
@@ -98,7 +98,7 @@ const Profile = (props) => {
           <div className="flex justify-center items-center ">
             <div className="relative">
               <svg
-                className="w-4 h-4 m-2 md:hidden lg:hidden cursor-pointer"
+                className="w-4 h-4 m-2 md:hidden lg:hidden cursor-pointer   "
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -151,8 +151,8 @@ const Profile = (props) => {
       {ongoing &&
         ongoingTask.map((element, index) => {
           return (
-            <div className="flex flex-col" key={element["_id"]}>
-              <div className="border border-gray-300 shadow-sm mx-2 rounded-sm my-2 md:w-11/12 md:mx-auto">
+            <div className="ongoing  flex flex-col " key={element["_id"]}>
+              <div className="ongoing__wrapper bg-white shadow-sm mx-2 rounded-sm my-2 md:w-11/12 md:mx-auto">
                 <div>
                   <img
                     className="w-16 mx-1 my-1 lg:w-24"
@@ -160,7 +160,7 @@ const Profile = (props) => {
                   />
                 </div>
                 <div className="flex flex-col items-center px-2 lg:flex-row lg:justify-between">
-                  <div className="text-sm text-center lg:text-lg">
+                  <div className="text-sm text-center font-normal lg:text-lg">
                     {/* CHHAVI INDIA 120 TC Microfiber Double 3D Printed Bedsheet
                   (Pack of 1, Blue, White) */}
                     {element["title"]}
@@ -191,7 +191,7 @@ const Profile = (props) => {
         trackedTask.map((element) => {
           return (
             <div className="flex flex-col" key={element["_id"]}>
-              <div className="border border-gray-300 shadow-sm mx-2 rounded-sm my-2 md:w-11/12 md:mx-auto">
+              <div className="tracked__wrapper   shadow-sm mx-2 rounded-sm my-2 md:w-11/12 md:mx-auto">
                 <div>
                   <img
                     className="w-16 mx-1 my-1 lg:w-24"
@@ -231,7 +231,7 @@ const Profile = (props) => {
         notificationTask.map((element) => {
           return (
             <div
-              className="border border-gray-300 flex flex-col items-center m-2 shadow-sm mx-2 rounded-sm my-2 md:w-11/12 md:mx-auto "
+              className=" notification__wrapper  flex flex-col items-center m-2 shadow-sm mx-2 rounded-sm my-2 md:w-11/12 md:mx-auto "
               key={element["_id"]}
             >
               <div className=" flex flex-col w-full items-center p-2">

@@ -145,7 +145,7 @@ const Home = (props) => {
         <div className="w-10/12 md:w-8/12 lg:w-7/12 xl:w-5/12 flex justify-center">
           <div className="wrapper h-auto">
             <div className="items flex justify-center items-center">
-              <a href="https://www.amazon.in" target="_blank">
+              <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
                 <img className="w-16 h-8" src={Brands["Amazon"]} />
               </a>
             </div>
@@ -155,27 +155,39 @@ const Home = (props) => {
               </a>
             </div>
             <div className="items flex justify-center items-center">
-              <a href="https://paytmmall.com/" target="_blank">
+              <a href="https://paytmmall.com/" target="_blank" rel="noreferrer">
                 <img className="w-16 h-8" src={Brands["Paytm"]} />
               </a>
             </div>
             <div className="items flex justify-center items-center">
-              <a href="https://www.nykaa.com/" target="_blank">
+              <a href="https://www.nykaa.com/" target="_blank" rel="noreferrer">
                 <img className="w-16 h-8" src={Brands["Nykaa"]} />
               </a>
             </div>
             <div className="items flex justify-center items-center">
-              <a href="https://www.snapdeal.com/" target="_blank">
+              <a
+                href="https://www.snapdeal.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img className="w-16 h-8" src={Brands["Snapdeal"]} />
               </a>
             </div>
             <div className="items flex justify-center items-center">
-              <a href="https://www.limeroad.com/" target="_blank">
+              <a
+                href="https://www.limeroad.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img className="w-16 h-8" src={Brands["Limeroad"]} />
               </a>
             </div>
             <div className="items flex justify-center items-center">
-              <a href="https://www.reliancedigital.in/" target="_blank">
+              <a
+                href="https://www.reliancedigital.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img className="w-16 h-8" src={Brands["Reliance Digital"]} />
               </a>
             </div>

@@ -1,4 +1,5 @@
 import axios from "axios";
+import "./style.css";
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 
@@ -67,8 +68,8 @@ const Login = (props) => {
       return <Redirect to="/" />;
     } else {
       return (
-        <div className="login min-h-screen flex justify-center items-center bg-blue-500">
-          <div className="border h-auto w-11/12 px-2 py-4 my-2 sm:w-2/3 md:w-2/3: lg:w-1/3  bg-white rounded-md shadow-lg">
+        <div className="login min-h-screen flex justify-center items-center ">
+          <div className=" h-auto w-11/12 px-2 py-4 my-2 sm:w-2/3 md:w-2/3: lg:w-1/3  bg-white rounded-sm shadow-lg">
             <Link to="/">
               <div className="flex justify-start">
                 <div className="flex items-center cursor-pointer">
