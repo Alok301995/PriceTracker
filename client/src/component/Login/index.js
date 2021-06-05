@@ -69,7 +69,7 @@ const Login = (props) => {
     } else {
       return (
         <div className="login min-h-screen flex justify-center items-center ">
-          <div className=" h-auto w-11/12 px-2 py-4 my-2 sm:w-2/3 md:w-2/3: lg:w-1/3  bg-white rounded-sm shadow-lg">
+          <div className=" h-auto w-11/12 px-2 py-4 my-2 sm:w-2/3 md:w-2/3: lg:w-1/3 xl:w-3/12 bg-white rounded-sm shadow-lg">
             <Link to="/">
               <div className="flex justify-start">
                 <div className="flex items-center cursor-pointer">

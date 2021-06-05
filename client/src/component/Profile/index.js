@@ -55,8 +55,8 @@ const Profile = (props) => {
             <span
               className={
                 ongoing
-                  ? "text-xs px-2 lg:text-lg cursor-pointer text-blue-600 font-medium "
-                  : "text-xs px-2 lg:text-lg cursor-pointer  text-gray-900 font-medium"
+                  ? "text-xs px-2 lg:text-lg cursor-pointer text-gray-300 font-medium "
+                  : "text-xs px-2 lg:text-lg cursor-pointer  text-white font-medium"
               }
               onClick={() => {
                 setTracked(false);
@@ -69,8 +69,8 @@ const Profile = (props) => {
             <span
               className={
                 tracked
-                  ? "text-xs px-2 lg:text-lg cursor-pointer text-blue-600 font-medium "
-                  : "text-xs px-2 lg:text-lg cursor-pointer text-gray-900 font-medium "
+                  ? "text-xs px-2 lg:text-lg cursor-pointer text-gray-300 font-medium "
+                  : "text-xs px-2 lg:text-lg cursor-pointer text-white font-medium "
               }
               onClick={() => {
                 setTracked(true);
@@ -83,8 +83,8 @@ const Profile = (props) => {
             <span
               className={
                 Notification
-                  ? "text-xs px-2 lg:text-lg cursor-pointer text-blue-600 font-medium "
-                  : "text-xs px-2 lg:text-lg cursor-pointer text-gray-900 font-medium"
+                  ? "text-xs px-2 lg:text-lg cursor-pointer text-gray-300 font-medium "
+                  : "text-xs px-2 lg:text-lg cursor-pointer text-white font-medium"
               }
               onClick={() => {
                 setTracked(false);
@@ -160,12 +160,12 @@ const Profile = (props) => {
                   />
                 </div>
                 <div className="flex flex-col items-center px-2 lg:flex-row lg:justify-between">
-                  <div className="text-sm text-center font-normal lg:text-lg">
+                  <div className="text-sm text-center text-white font-normal lg:text-lg">
                     {/* CHHAVI INDIA 120 TC Microfiber Double 3D Printed Bedsheet
                   (Pack of 1, Blue, White) */}
                     {element["title"]}
                   </div>
-                  <div className="text-sm font-semibold lg:text-lg">
+                  <div className="text-sm text-gray-900 font-semibold lg:text-lg">
                     Marked Price :
                     {(function () {
                       const formatter = new Intl.NumberFormat("en-IN", {

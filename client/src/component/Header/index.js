@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, forwardRef } from "react";
 import logo from "../../assets/img/logo_4.png";
 import { Link } from "react-router-dom";
+import "./style.css";
 // image import
 import avatar from "../../assets/profile/user.svg";
 
@@ -33,7 +34,7 @@ const Header = (props) => {
             {props.login ? (
               <div className="relative p-1 flex  justify-start items-center  md:flex-row md:mr-3 cursor-pointer lg:mr-4 min-w-2/6">
                 <img className="w-6 md:mr-1 md:w-8" src={avatar} />
-                <p className="text-xs w-full font-semibold text-center cursor-default px-1 lg:text-base">
+                <p className="text-xs w-full font-semibold text-center text-white cursor-default px-1 lg:text-base">
                   {props.currentUser.split(" ")[0]}
                 </p>
               </div>
