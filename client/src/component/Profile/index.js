@@ -49,14 +49,14 @@ const Profile = (props) => {
   // End of Main
   return (
     <div className="profile scrollbar-hide pt-2 h-auto bg-white">
-      <div className="profile__header  mx-2 rounded-sm mb-8 md:w-11/12 md:mx-auto">
-        <div className="flex justify-between items-center px-2 py-1">
+      <div className="profile__header  mx-2 rounded-sm mb-5  md:w-11/12 md:mx-auto">
+        <div className="flex justify-between items-center px-2 py-1 mt-4">
           <div className=" p-1 md:w-1/2 ">
             <span
               className={
                 ongoing
-                  ? "text-xs px-2 lg:text-lg cursor-pointer text-gray-300 font-medium "
-                  : "text-xs px-2 lg:text-lg cursor-pointer  text-white font-medium"
+                  ? "text-xs px-2 lg:text-lg cursor-pointer font-medium "
+                  : "text-xs px-2 lg:text-lg cursor-pointer   font-medium"
               }
               onClick={() => {
                 setTracked(false);
@@ -69,8 +69,8 @@ const Profile = (props) => {
             <span
               className={
                 tracked
-                  ? "text-xs px-2 lg:text-lg cursor-pointer text-gray-300 font-medium "
-                  : "text-xs px-2 lg:text-lg cursor-pointer text-white font-medium "
+                  ? "text-xs px-2 lg:text-lg cursor-pointer  font-medium "
+                  : "text-xs px-2 lg:text-lg cursor-pointer  font-medium "
               }
               onClick={() => {
                 setTracked(true);
@@ -83,8 +83,8 @@ const Profile = (props) => {
             <span
               className={
                 Notification
-                  ? "text-xs px-2 lg:text-lg cursor-pointer text-gray-300 font-medium "
-                  : "text-xs px-2 lg:text-lg cursor-pointer text-white font-medium"
+                  ? "text-xs px-2 lg:text-lg cursor-pointer  font-medium "
+                  : "text-xs px-2 lg:text-lg cursor-pointer font-medium"
               }
               onClick={() => {
                 setTracked(false);
@@ -160,7 +160,7 @@ const Profile = (props) => {
                   />
                 </div>
                 <div className="flex flex-col items-center px-2 lg:flex-row lg:justify-between">
-                  <div className="text-sm text-center text-white font-normal lg:text-lg">
+                  <div className="text-sm text-center  font-normal lg:text-lg">
                     {/* CHHAVI INDIA 120 TC Microfiber Double 3D Printed Bedsheet
                   (Pack of 1, Blue, White) */}
                     {element["title"]}

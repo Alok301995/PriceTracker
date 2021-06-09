@@ -22,10 +22,10 @@ const Header = (props) => {
 
   // End of Main
   return (
-    <header className="flex px-1 py-2 items-center">
+    <header className="flex px-1 py-2 bg-gray-200 h-14 xl:h-16 items-center">
       <div className=" w-1/3 md:ml-2 " id="logo p-2">
         <Link to="/">
-          <img className="w-32 mt-1" src={logo} />
+          <img className="w-24 xl:w-28 mt-1" src={logo} />
         </Link>
       </div>
       <div className="w-2/3">
@@ -34,7 +34,7 @@ const Header = (props) => {
             {props.login ? (
               <div className="relative p-1 flex  justify-start items-center  md:flex-row md:mr-3 cursor-pointer lg:mr-4 min-w-2/6">
                 <img className="w-6 md:mr-1 md:w-8" src={avatar} />
-                <p className="text-xs w-full font-semibold text-center text-white cursor-default px-1 lg:text-base">
+                <p className="text-xs w-full font-semibold text-center text-gray-800 cursor-default px-1 lg:text-base">
                   {props.currentUser.split(" ")[0]}
                 </p>
               </div>
