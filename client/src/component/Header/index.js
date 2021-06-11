@@ -25,7 +25,7 @@ const Header = (props) => {
     <header className="flex px-1 py-2 h-14 xl:h-16 items-center">
       <div className=" w-1/3 md:ml-2 " id="logo p-2">
         <Link to="/">
-          <img className="w-24 xl:w-28 mt-1" src={logo} />
+          <img className="w-28 xl:w-32 mt-1" src={logo} />
         </Link>
       </div>
       <div className="w-2/3">

@@ -8,3 +8,10 @@ footer {
 
 .footer__btn:hover {
 } */
+
+.social__media {
+  color: white;
+  padding: 2px;
+  background-color: white;
+  border-radius: 20%;
+}
