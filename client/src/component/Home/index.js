@@ -102,9 +102,9 @@ const Home = (props) => {
   // End of Main function
 
   return (
-    <div className="home  overflow-x-hidden h-auto  scrollbar-hide  flex flex-col  items-center my-8">
+    <div className="home  overflow-x-hidden relative scrollbar-hide  flex flex-col  items-center p-2 mt-4">
       <div className="flex flex-col w-screen items-center ">
-        <h1 className="text-2xl md:text-3xl lg:text-3xl text-gray-800 font-medium">
+        <h1 className=" mt-2 text-2xl md:text-3xl lg:text-3xl text-gray-800 font-medium">
           Price Tracker
         </h1>
         <p className="text-md md:text-lg text-gray-600 font-medium">
@@ -285,6 +285,22 @@ const Home = (props) => {
       ) : (
         false
       )}
+      <div className="absolute bottom-5 xl:bottom-0 text-gray-700">
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
+          />
+        </svg>
+      </div>
     </div>
   );
 };

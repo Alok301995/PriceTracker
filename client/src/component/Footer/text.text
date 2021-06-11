@@ -1,0 +1,63 @@
+{/* <div className="border border-gray-900">
+          <h2 className="text-center font-bold text-">GET ALRT</h2>
+          <p className="text-center">
+            Free Price Tracker for Ecommerce site
+          </p>{" "}
+        </div> */}
+        {/* <div className="text-center text-sm font-bold text-gray-100">
+          Contact Us
+        </div> */}
+        {/* <div className=" flex flex-col">
+          <div className="flex items-center justify-center p-2">
+            <span>
+              <svg
+                className="w-4 h-4 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+                />
+              </svg>
+            </span>
+            <span
+              className="pl-2 font-bold text-gray-200 cursor-pointer"
+              onClick={(e) => {
+                setToggler(!toggler);
+              }}
+            >
+              getalrt.customerservice@gmail.com
+            </span>
+          </div>
+
+          {toggler ? (
+            <div className="flex flex-col">
+              <input
+                type="text"
+                placeholder="Email"
+                className="p-1 w-2/3 md:w-4/12 mx-auto border border-gray-400 outline-none"
+              />
+              <textarea
+                className="w-2/3 mx-auto md:w-4/12 my-2 px-2 py-4"
+                placeholder="Message "
+              ></textarea>
+              <button className="footer__btn border border-blue-500 bg-blue-600 hover:border-gray-300 p-1 my-1 rounded-xl w-3/12 xl:w-1/12 mx-auto text-white font-medium outline-none focus:outline-none">
+                Send
+              </button>
+            </div>
+          ) : (
+            false
+          )}
+
+          <div>how to use</div>
+          <div>about us </div>
+        </div> */}
+
+
+
+        "w-6 h-6 text-gray-400 cursor-pointer"

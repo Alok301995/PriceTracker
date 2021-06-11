@@ -9,13 +9,12 @@ const Graph = ({ dateArray, priceArray }) => {
       {
         label: "Price Chart",
         data: [0, ...priceArray],
-        backgroundColor: "rgba(68, 165, 255, 0.3)",
-        borderColor: "rgba(70, 88, 244,0.6)",
+        backgroundColor: "#2c344425",
+        borderColor: "rgba(0, 0, 0,0.8)",
         borderWidth: 1,
-        hoverBorderColor: "rgb(75, 192, 50)",
+        hoverBorderColor: "rgba(0, 0, 0 ,0.4)",
         pointRadius: 5,
         tension: 0.3,
-        hoverBorderColor: "rgba(33, 97, 237,0.6)",
         borderWidth: 1,
         hoverBorderWidth: 5,
         fill: true,
@@ -67,6 +66,15 @@ const Graph = ({ dateArray, priceArray }) => {
         <Line
           data={chartData}
           options={{
+            scales: {
+              yAxes: [
+                {
+                  gridLines: {
+                    display: false,
+                  },
+                },
+              ],
+            },
             maintainAspectRatio: true,
             maintainAspectRatio: true,
             layout: {

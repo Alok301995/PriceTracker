@@ -22,7 +22,7 @@ const Header = (props) => {
 
   // End of Main
   return (
-    <header className="flex px-1 py-2 bg-gray-200 h-14 xl:h-16 items-center">
+    <header className="flex px-1 py-2 h-14 xl:h-16 items-center">
       <div className=" w-1/3 md:ml-2 " id="logo p-2">
         <Link to="/">
           <img className="w-24 xl:w-28 mt-1" src={logo} />
@@ -68,7 +68,7 @@ const Header = (props) => {
                 />
               </svg>
               {toggle ? (
-                <div className="border absolute flex flex-col justify-center right-0 top-11 w-20 h-16 z-50 rounded-sm cursor-default bg-white lg:w-32 lg:h-24">
+                <div className="border absolute flex flex-col justify-center right-0 top-12 w-20 h-16 z-50 rounded-sm cursor-default bg-gray-200 lg:w-32 lg:h-24">
                   <ul className="">
                     <Link
                       to={props.homeHeader === "Profile" ? "/profile" : "/"}

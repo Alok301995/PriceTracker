@@ -1,3 +1,6 @@
+.home {
+  height: 500px;
+}
 .wrapper {
   max-width: 100%;
   display: flex;
