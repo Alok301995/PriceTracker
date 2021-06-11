@@ -413,11 +413,6 @@ img {
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
 }
 
-.bg-gray-200{
-  --tw-bg-opacity: 1;
-  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
-}
-
 .bg-blue-500{
   --tw-bg-opacity: 1;
   background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
@@ -823,8 +818,20 @@ img {
   position: relative;
 }
 
+.sticky{
+  position: sticky;
+}
+
+.top-0{
+  top: 0px;
+}
+
 .right-0{
   right: 0px;
+}
+
+.left-0{
+  left: 0px;
 }
 
 .top-1{
@@ -1179,8 +1186,8 @@ img {
     width: 66.666667%;
   }
 
-  .md\:w-11\/12{
-    width: 91.666667%;
+  .md\:w-10\/12{
+    width: 83.333333%;
   }
 }
 

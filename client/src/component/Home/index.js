@@ -102,7 +102,7 @@ const Home = (props) => {
   // End of Main function
 
   return (
-    <div className="home  overflow-x-hidden relative scrollbar-hide  flex flex-col  items-center p-2 mt-4">
+    <div className="home overflow-x-hidden relative scrollbar-hide  flex flex-col  items-center p-2 mt-4">
       <div className="flex flex-col w-screen items-center ">
         <h1 className=" mt-2 text-2xl md:text-3xl lg:text-3xl text-gray-800 font-medium">
           Price Tracker

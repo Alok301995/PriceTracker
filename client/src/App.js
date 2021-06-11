@@ -30,7 +30,7 @@ function App() {
   }, []);
   // End of Main
   return (
-    <div className="App scrollbar-hide box-border min-h-screen flex flex-col justify-between  h-auto  font-raleway ">
+    <div className="App relative scrollbar-hide box-border min-h-screen flex flex-col justify-between  h-auto  font-raleway ">
       <Switch>
         <Route exact path="/">
           <Header

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, forwardRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import logo from "../../assets/img/logo_4.png";
 import { Link } from "react-router-dom";
 import "./style.css";
@@ -8,6 +8,7 @@ import avatar from "../../assets/profile/user.svg";
 const Header = (props) => {
   // Main Function
   const [toggle, setToggle] = useState(false);
+  const [scrollMove, setScrollMove] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -16,13 +17,32 @@ const Header = (props) => {
         setToggle(false);
       }
     }
+    function scrollHandler() {
+      if (window.scrollY > 54) {
+        setScrollMove(true);
+      } else {
+        setScrollMove(false);
+      }
+    }
 
     window.addEventListener("click", handler);
+    window.addEventListener("scroll", scrollHandler);
+
+    return () => {
+      window.removeEventListener("click", handler);
+      window.removeEventListener("scroll", scrollHandler);
+    };
   }, []);
 
   // End of Main
   return (
-    <header className="flex px-1 py-2 h-14 xl:h-16 items-center">
+    <header
+      className={
+        scrollMove
+          ? "header__active flex sticky top-0 left-0 right-0 z-50 px-1 py-2 h-14 xl:h-16 items-center"
+          : "flex px-1 py-2 h-14 xl:h-16 items-center"
+      }
+    >
       <div className=" w-1/3 md:ml-2 " id="logo p-2">
         <Link to="/">
           <img className="w-28 xl:w-32 mt-1" src={logo} />
@@ -68,17 +88,17 @@ const Header = (props) => {
                 />
               </svg>
               {toggle ? (
-                <div className="border absolute flex flex-col justify-center right-0 top-12 w-20 h-16 z-50 rounded-sm cursor-default bg-gray-200 lg:w-32 lg:h-24">
+                <div className="border absolute flex flex-col justify-center right-0 top-12 w-20 h-16 z-50 rounded-sm cursor-default bg-gray-100 lg:w-32 lg:h-24">
                   <ul className="">
                     <Link
                       to={props.homeHeader === "Profile" ? "/profile" : "/"}
                     >
-                      <li className="text-center text-xs md:text-sm my-1 lg:text-base">
+                      <li className="text-center text-xs font-medium md:text-sm my-1 lg:text-base">
                         {props.homeHeader}
                       </li>
                     </Link>
                     <Link to="/logout">
-                      <li className="text-center text-xs md:text-sm my-1 ">
+                      <li className="text-center text-xs font-medium md:text-sm my-1 ">
                         Log Out
                       </li>
                     </Link>

@@ -49,7 +49,7 @@ const Profile = (props) => {
   // End of Main
   return (
     <div className="profile scrollbar-hide pt-2 h-auto bg-white">
-      <div className="profile__header  mx-2 rounded-sm mb-5  md:w-11/12 md:mx-auto">
+      <div className="profile__header  mx-2 rounded-sm mb-5  md:w-10/12 md:mx-auto">
         <div className="flex justify-between items-center px-2 py-1 mt-4">
           <div className=" p-1 md:w-1/2 ">
             <span
@@ -152,7 +152,7 @@ const Profile = (props) => {
         ongoingTask.map((element, index) => {
           return (
             <div className="ongoing  flex flex-col " key={element["_id"]}>
-              <div className="ongoing__wrapper bg-white shadow-sm mx-2 rounded-sm my-2 md:w-11/12 md:mx-auto">
+              <div className="ongoing__wrapper bg-white shadow-sm mx-2 rounded-sm my-2 md:w-10/12 md:mx-auto">
                 <div>
                   <img
                     className="w-16 mx-1 my-1 lg:w-24"
@@ -191,7 +191,7 @@ const Profile = (props) => {
         trackedTask.map((element) => {
           return (
             <div className="flex flex-col" key={element["_id"]}>
-              <div className="tracked__wrapper   shadow-sm mx-2 rounded-sm my-2 md:w-11/12 md:mx-auto">
+              <div className="tracked__wrapper   shadow-sm mx-2 rounded-sm my-2 md:w-10/12 md:mx-auto">
                 <div>
                   <img
                     className="w-16 mx-1 my-1 lg:w-24"
@@ -231,7 +231,7 @@ const Profile = (props) => {
         notificationTask.map((element) => {
           return (
             <div
-              className=" notification__wrapper  flex flex-col items-center m-2 shadow-sm mx-2 rounded-sm my-2 md:w-11/12 md:mx-auto "
+              className=" notification__wrapper  flex flex-col items-center m-2 shadow-sm mx-2 rounded-sm my-2 md:w-10/12 md:mx-auto "
               key={element["_id"]}
             >
               <div className=" flex flex-col w-full items-center p-2">

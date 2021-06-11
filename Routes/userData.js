@@ -31,7 +31,10 @@ route.post("/updatePrice", auth, async (req, res) => {
       doc["Data"][updateIndex]["pricedrop"] = false;
       doc["Data"][updateIndex]["notified"] = false;
       await doc.save();
-      res.send({ msg: "Update successfully", updateStatus: true });
+      res.send({
+        msg: "Update successfully , Check profile for more details",
+        updateStatus: true,
+      });
     }
   } catch (error) {
     next(error);
@@ -71,7 +74,7 @@ route.post("/", auth, async (req, res, next) => {
       doc["Data"].push(userData);
       await doc.save();
       return res.json({
-        msg: "Price Added Successfully ",
+        msg: "Price Added Successfully , Check Profile for more detail ",
         success: true,
         updateIndex: -1,
         updateRequired: false,
@@ -86,7 +89,7 @@ route.post("/", auth, async (req, res, next) => {
           );
           await doc.save();
           return res.json({
-            msg: "Price Added Successfully ",
+            msg: "Price Added Successfully ,Check profile for more details",
             success: true,
             updateIndex: -1,
             updateRequired: false,
@@ -105,7 +108,7 @@ route.post("/", auth, async (req, res, next) => {
         doc["Data"].push(userData);
         await doc.save();
         return res.json({
-          msg: "Price Added Successfully ",
+          msg: "Price Added Successfully , Check Profile for more details ",
           success: true,
           updateIndex: -1,
           updateRequired: false,
