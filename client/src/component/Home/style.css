@@ -44,3 +44,10 @@
     opacity: 0;
   }
 }
+
+.bg {
+  z-index: -1;
+}
+.info {
+  background-color: #e8e9eb85;
+}

@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import logo from "../../assets/img/logo_4.png";
+import logo from "../../assets/img/logo_2.svg";
 import { Link } from "react-router-dom";
 import "./style.css";
 // image import
 import avatar from "../../assets/profile/user.svg";
+import signin from "../../assets/profile/refer.svg";
 
 const Header = (props) => {
   // Main Function
@@ -45,7 +46,7 @@ const Header = (props) => {
     >
       <div className=" w-1/3 md:ml-2 " id="logo p-2">
         <Link to="/">
-          <img className="w-28 xl:w-32 mt-1" src={logo} />
+          <img className="w-24 xl:w-32" src={logo} />
         </Link>
       </div>
       <div className="w-2/3">
@@ -60,7 +61,8 @@ const Header = (props) => {
               </div>
             ) : (
               <Link to="/login">
-                <span className=" bg-blue-600 px-3 py-2 rounded-sm text-sm text-white mr-2 md:mr-4 font-medium ">
+                <span className="px-2 py-1.5 rounded-sm text-xs text-gray-900 mr-2 md:mr-4 font-bold flex items-center">
+                  <img src={signin} className="w-3 h-3 mr-1" />
                   Sign In
                 </span>
               </Link>

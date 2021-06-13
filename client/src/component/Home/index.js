@@ -8,6 +8,7 @@ import flipkartBg from "../../assets/img/flipkart__bg.png";
 import amazon from "../../assets/brands/amazon.svg";
 
 import Brands from "../../service/images";
+import bg from "../../assets/bg/bg_14.svg";
 
 const Home = (props) => {
   // Main Function
@@ -102,9 +103,10 @@ const Home = (props) => {
   // End of Main function
 
   return (
-    <div className="home overflow-x-hidden relative scrollbar-hide  flex flex-col  items-center p-2 mt-4">
+    <div className="home  overflow-x-hidden relative scrollbar-hide  flex flex-col  items-center p-2">
+      <img src={bg} className="absolute bg h-full bottom-0" />
       <div className="flex flex-col w-screen items-center ">
-        <h1 className=" mt-2 text-2xl md:text-3xl lg:text-3xl text-gray-800 font-medium">
+        <h1 className="text-2xl md:text-3xl lg:text-3xl text-gray-800 font-medium">
           Price Tracker
         </h1>
         <p className="text-md md:text-lg text-gray-600 font-medium">
@@ -113,7 +115,7 @@ const Home = (props) => {
       </div>
       {/* Search Bar  */}
       <div className=" w-screen h-auto p-2  ">
-        <div className="box-border flex justify-center p-2">
+        <div className="mt-2 box-border flex justify-center p-2">
           <input
             className="w-4/5 sm:w-4/6 md:w-6/12 lg:w-5/12 xl:w-4/12   px-2 py-2 text-sm font-normal sm:text-base  outline-none border border-blue-600 rounded-r-none rounded-l-sm text-gray-white"
             type="text"
@@ -198,8 +200,8 @@ const Home = (props) => {
       {/* Info div */}
 
       {responseLoaded ? (
-        <div className="info w-full flex flex-col items-center ">
-          <div className=" w-4/5 sm:w-4/6 md:w-7/12 lg:w-6/12 xl:w-4/12  border rounded-md border-gray-300 animateInDiv">
+        <div className=" w-full flex flex-col items-center ">
+          <div className="info w-4/5 sm:w-4/6 md:w-7/12 lg:w-6/12 xl:w-4/12  border rounded-md border-gray-300 animateInDiv">
             <div className="info__header flex justify-between py-2 px-2">
               <div className="text-xs">
                 <img className="w-20 h-10 object-contain" src={flipkartBg} />
@@ -242,7 +244,7 @@ const Home = (props) => {
               </div>
             ) : (
               <div className="info__content ">
-                <p className="text-xs text-center md:text-base  p-2   text-gray-700">
+                <p className="text-xs text-center font-medium md:text-base  p-2 text-gray-700">
                   {/* Title of Product */}
                   {serverResponse[1]}
                 </p>
@@ -274,7 +276,7 @@ const Home = (props) => {
                   </button>
                 </div>
                 <div className="flex justify-center p-2">
-                  <p className="text-xs text-gray-900 md:text-sm">
+                  <p className="text-xs text-gray-900 font-medium text-center md:text-sm">
                     {msgResponse["msg"]}
                   </p>
                 </div>

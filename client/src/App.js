@@ -5,7 +5,7 @@ import Header from "./component/Header/index";
 import Home from "./component/Home/index";
 import Footer from "./component/Footer/index";
 import Login from "./component/Login/index";
-import Profile from "./component/Profile/index";
+import Profile from "./component/Profile/profileAuth";
 import Logout from "./component/Logout/index";
 import { Switch, Route } from "react-router-dom";
 
@@ -51,7 +51,7 @@ function App() {
             currentUser={currentUser}
             homeHeader={profileHeader}
           ></Header>
-          <Profile />
+          <Profile login={login} />
         </Route>
         <Route exact path="/logout">
           <Logout setLogin={setLogin}></Logout>

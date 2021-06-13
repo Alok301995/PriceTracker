@@ -6,7 +6,7 @@ const About = (props) => {
       <div className="wrapper  flex flex-col p-1 flex-1 items-center">
         <h2 className="text-gray-200 text-lg p-1 font-medium">Rishabh Singh</h2>
         <p className="text-gray-300 px-2 text-sm font-medium">
-          Marketing Head , Co-Founder
+          Marketing Executive, Co-Founder
         </p>
         <p className="text-gray-300 px-1 font-medium flex items-center">
           <span>
@@ -33,7 +33,7 @@ const About = (props) => {
           Rahul Prajapati
         </h2>
         <p className="text-gray-300 px-2 text-sm font-medium">
-          Creative Head , Co-Founder
+          Design Executive , Co-Founder
         </p>
         <p className="text-gray-300 px-1 font-medium flex items-center">
           <span>
@@ -59,7 +59,7 @@ const About = (props) => {
       <div className="wrapper flex flex-col p-1 flex-1 items-center">
         <h2 className="text-gray-200 text-lg p-1 font-medium">Alok Dhiman</h2>
         <p className="text-gray-300 px-2 text-sm font-medium">
-          Technical Head , Co-Founder
+          Technical officer , Co-Founder
         </p>
         <p className="text-gray-300 px-1 font-medium flex items-center">
           <span>
