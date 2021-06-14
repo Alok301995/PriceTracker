@@ -46,7 +46,7 @@ const Header = (props) => {
     >
       <div className=" w-1/3 md:ml-2 " id="logo p-2">
         <Link to="/">
-          <img className="w-24 xl:w-32" src={logo} />
+          <img className="w-20 xl:w-24 xl:ml-4 " src={logo} />
         </Link>
       </div>
       <div className="w-2/3">
@@ -61,8 +61,8 @@ const Header = (props) => {
               </div>
             ) : (
               <Link to="/login">
-                <span className="px-2 py-1.5 rounded-sm text-xs text-gray-900 mr-2 md:mr-4 font-bold flex items-center">
-                  <img src={signin} className="w-3 h-3 mr-1" />
+                <span className="px-2 py-1.5 rounded-sm text-xs xl:text-base text-gray-900 mr-2 md:mr-4 font-bold flex items-center">
+                  <img src={signin} className="w-3 h-3 mr-1 xl:w-4 xl:h-4 " />
                   Sign In
                 </span>
               </Link>

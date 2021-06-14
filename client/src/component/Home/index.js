@@ -5,7 +5,6 @@ import Loader from "react-loader-spinner";
 // Image imports
 
 import flipkartBg from "../../assets/img/flipkart__bg.png";
-import amazon from "../../assets/brands/amazon.svg";
 
 import Brands from "../../service/images";
 import bg from "../../assets/bg/bg_14.svg";
@@ -103,7 +102,7 @@ const Home = (props) => {
   // End of Main function
 
   return (
-    <div className="home  overflow-x-hidden relative scrollbar-hide  flex flex-col  items-center p-2">
+    <div className="home overflow-x-hidden relative scrollbar-hide  flex flex-col  items-center p-2">
       <img src={bg} className="absolute bg h-full bottom-0" />
       <div className="flex flex-col w-screen items-center ">
         <h1 className="text-2xl md:text-3xl lg:text-3xl text-gray-800 font-medium">

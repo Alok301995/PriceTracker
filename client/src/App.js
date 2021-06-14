@@ -46,12 +46,14 @@ function App() {
           <Login setLogin={setLogin} setCurrentUser={setCurrentUser}></Login>
         </Route>
         <Route exact path="/profile">
-          <Header
-            login={login}
-            currentUser={currentUser}
-            homeHeader={profileHeader}
-          ></Header>
-          <Profile login={login} />
+          <div className="min-h-screen ">
+            <Header
+              login={login}
+              currentUser={currentUser}
+              homeHeader={profileHeader}
+            ></Header>
+            <Profile login={login} />
+          </div>
         </Route>
         <Route exact path="/logout">
           <Logout setLogin={setLogin}></Logout>
