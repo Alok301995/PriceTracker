@@ -20,6 +20,7 @@ const notify = require("./Routes/notify");
 const notifiactionCount = require("./Routes/notificationCount");
 const forgetPass = require("./Routes/forgetPassword");
 const resetPass = require("./Routes/resetPassword");
+const contactInfo = require("./Routes/contact");
 
 server.use(cookieParser());
 server.use(express.json());
@@ -37,6 +38,7 @@ server.use("/notification", notify);
 server.use("/notificationCount", notifiactionCount);
 server.use("/forgetpassword", forgetPass);
 server.use("/resetpassword", resetPass);
+server.use("/contact", contactInfo);
 
 // Error handler Middleware
 server.use((err, req, res, next) => {

@@ -908,6 +908,10 @@ img {
   top: 3rem;
 }
 
+.resize{
+  resize: both;
+}
+
 *{
   --tw-shadow: 0 0 #0000;
 }

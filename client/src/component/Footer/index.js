@@ -2,12 +2,34 @@ import React, { useState } from "react";
 import "./style.css";
 import About from "../About/index";
 import HowToUse from "../Howtouse/index";
+import axios from "axios";
+import { set } from "mongoose";
 const Footer = () => {
+  // Main function
   const [toggler, setToggler] = useState(true);
   const [about, setAbout] = useState(false);
   const [contact, setContact] = useState(false);
   const [hwt, setHwt] = useState(false);
+  const [email, setEmail] = useState("");
+  const [text, setTextArea] = useState("");
+  const [responseText, setResponseText] = useState("");
 
+  const sendContactInfo = async () => {
+    console.log(text);
+    console.log(email);
+    if (email.length === 0 || text.length === 0) {
+      return;
+    }
+    const data = { email: email, text: text };
+    try {
+      const response = await axios.post("/contact", data);
+      setResponseText(response.data["msg"]);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  //  End of main fucntion
   return (
     <footer className="flex flex-col justify-center text-xs w-full p-2 ">
       <div className="flex flex-col xl:flex-row  p-2 justify-between">
@@ -69,6 +91,9 @@ const Footer = () => {
                 setContact(false);
                 setAbout(false);
                 setHwt(false);
+                setEmail("");
+                setTextArea("");
+                setResponseText("");
               }}
             >
               <path
@@ -159,14 +184,22 @@ const Footer = () => {
                 type="text"
                 placeholder="Email"
                 className="p-1 w-2/3 md:w-4/12 xl:w-6/12 mx-auto border border-gray-400 outline-none rounded-sm"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
               <textarea
                 className="w-8/12 mx-auto md:w-4/12 xl:w-6/12 my-2 px-2 py-2 border border-gray-400 outline-none"
                 placeholder="Message "
+                onChange={(e) => setTextArea(e.target.value)}
+                value={text}
               ></textarea>
-              <button className="footer__btn border border-blue-500 bg-blue-600 hover:border-gray-300 p-1 my-0 rounded-xl w-3/12 xl:w-2/12 mx-auto text-white font-medium outline-none focus:outline-none">
+              <button
+                className="footer__btn border border-blue-500 bg-blue-600 hover:border-gray-300 p-1 my-0 rounded-xl w-3/12 xl:w-2/12 mx-auto text-white font-medium outline-none focus:outline-none"
+                onClick={sendContactInfo}
+              >
                 Send
               </button>
+              <div className="text-xs text-gray-300">{responseText}</div>
             </div>
           )}
 

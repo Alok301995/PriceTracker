@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import axios from "axios";
 import Loader from "react-loader-spinner";
@@ -8,6 +8,7 @@ import flipkartBg from "../../assets/img/flipkart__bg.png";
 
 import Brands from "../../service/images";
 import bg from "../../assets/bg/bg_14.svg";
+import bg_desktop from "../../assets/bg/bg_17.svg";
 
 const Home = (props) => {
   // Main Function
@@ -22,6 +23,29 @@ const Home = (props) => {
   const [responseLoading, setResponseLoading] = useState(false);
   const [responseLoaded, setResponseLoaded] = useState(false);
   const [msgResponse, setMsgResponse] = useState({});
+  const [desktopToggler, setDesktopToggler] = useState(null);
+
+  useEffect(() => {
+    let intialWidth = document.body.clientWidth;
+    if (intialWidth > 1024) {
+      setDesktopToggler(true);
+    } else {
+      setDesktopToggler(false);
+    }
+
+    function handler() {
+      if (document.body.clientWidth > 1024) {
+        setDesktopToggler(true);
+      } else {
+        setDesktopToggler(false);
+      }
+    }
+    window.addEventListener("resize", handler);
+    return () => {
+      window.removeEventListener("resize", handler);
+    };
+  });
+
   // URL Submit
   const onUrlSubmit = async (e) => {
     e.preventDefault();
@@ -103,7 +127,11 @@ const Home = (props) => {
 
   return (
     <div className="home overflow-x-hidden relative scrollbar-hide  flex flex-col  items-center p-2">
-      <img src={bg} className="absolute bg h-full bottom-0" />
+      {desktopToggler && desktopToggler !== null ? (
+        <img src={bg_desktop} className="absolute bg h-full bottom-0" />
+      ) : (
+        <img src={bg} className="absolute bg h-full bottom-0" />
+      )}
       <div className="flex flex-col w-screen items-center ">
         <h1 className="text-2xl md:text-3xl lg:text-3xl text-gray-800 font-medium">
           Price Tracker
