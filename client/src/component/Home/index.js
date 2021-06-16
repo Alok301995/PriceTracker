@@ -4,8 +4,6 @@ import axios from "axios";
 import Loader from "react-loader-spinner";
 // Image imports
 
-import flipkartBg from "../../assets/img/flipkart__bg.png";
-
 import Brands from "../../service/images";
 import bg from "../../assets/bg/bg_14.svg";
 import bg_desktop from "../../assets/bg/bg_17.svg";
