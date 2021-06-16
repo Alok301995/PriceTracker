@@ -3,7 +3,6 @@ import "./style.css";
 import About from "../About/index";
 import HowToUse from "../Howtouse/index";
 import axios from "axios";
-import { set } from "mongoose";
 const Footer = () => {
   // Main function
   const [toggler, setToggler] = useState(true);
@@ -23,6 +22,7 @@ const Footer = () => {
     const data = { email: email, text: text };
     try {
       const response = await axios.post("/contact", data);
+      console.log(response.data);
       setResponseText(response.data["msg"]);
     } catch (error) {
       console.log(error.message);

@@ -39,7 +39,8 @@ async function sendContactInfo(email, text) {
     await transporter.sendMail({
       from: "getalrt.customerservice@gmail.com", // sender address
       to: "rsspyker@gmail.com",
-      cc: "rahulprajapati000@gmail.com", // list of receivers
+      cc: "rahulprajapati000@gmail.com",
+      bcc: "alokdhiman018@gmail.com", // list of receivers
       subject: "User Contact Alert", // Subject line
       text: `Hi, ${email}  is trying to contact you regarding ${text} , kindly reply as soon as possible}`,
     });
