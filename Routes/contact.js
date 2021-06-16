@@ -8,8 +8,11 @@ route.post("/", async (req, res) => {
     port: 465,
     service: "gmail",
     auth: {
+      type: "OAuth2",
       user: "getalrt.customerservice@gmail.com",
-      pass: "getalrtarr",
+      clientId:
+        "42717882496-bviuiudktv2jcolc4rq5a16cn0reurs7.apps.googleusercontent.com",
+      clientSecret: "aFxq3EAN949KD0cAWstoSuhm",
     },
   });
 
