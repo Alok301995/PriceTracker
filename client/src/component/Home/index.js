@@ -250,7 +250,7 @@ const Home = (props) => {
           <div className="info w-4/5 sm:w-4/6 md:w-7/12 lg:w-6/12 xl:w-4/12  border rounded-md border-gray-300 animateInDiv">
             <div className="info__header flex justify-between py-2 px-2">
               <div className="text-xs">
-                <img className="w-20 h-10 object-contain" src={flipkartBg} />
+                {/* <img className="w-8  object-contain" src={Brands["Flipkart"]} /> */}
               </div>
               {/* Close button */}
               <div
@@ -284,7 +284,7 @@ const Home = (props) => {
             </div>
             {success ? (
               <div className="flex justify-center p-2">
-                <p className="text-xs text-gray-900 md:text-sm">
+                <p className="text-xs text-gray-900 md:text-sm text-center">
                   {msgResponse["msg"]}
                 </p>
               </div>
