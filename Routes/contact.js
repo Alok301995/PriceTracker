@@ -8,8 +8,8 @@ route.post("/", async (req, res) => {
     port: 587,
     service: "gmail",
     auth: {
-      user: "getalrt.customerservice@gmail.com",
-      pass: "getalrtarr",
+      user: "service.getalrt@gmail.com",
+      pass: "8077199771",
     },
   });
 
