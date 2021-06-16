@@ -3,15 +3,13 @@ const nodemailer = require("nodemailer");
 
 route.post("/", async (req, res) => {
   const { email, text } = req.body;
-  console.log(email, text);
   let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
     service: "gmail",
     auth: {
       user: "getalrt.customerservice@gmail.com",
       pass: "getalrtarr",
-      clientId:
-        "352374800610-s0upsv1j09u4kh9okamb46d2gi1tuot4.apps.googleusercontent.com",
-      clientSecret: "NRy0VzuD1gLpxtj6daC7Yg68",
     },
   });
 
