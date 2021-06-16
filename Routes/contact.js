@@ -28,6 +28,7 @@ route.post("/", async (req, res) => {
     },
     (err, info) => {
       if (err) {
+        console.log(err);
         return res.send({ success: false, msg: "Unable to send Mail" });
       } else {
         return res.send({ success: true, msg: "Message sent succesfully" });
