@@ -8,8 +8,8 @@ route.post("/", async (req, res) => {
     port: 587,
     service: "gmail",
     auth: {
-      user: "getalrt.customerservice@gmail.com",
-      pass: "getalrtarr",
+      user: "service.getalrt@gmail.com",
+      pass: "8077199771",
     },
   });
 
@@ -20,7 +20,7 @@ route.post("/", async (req, res) => {
   }
   transporter.sendMail(
     {
-      from: "getalrt.customerservice@gmail.com", // sender address
+      from: "service.getalrt@gmail.com", // sender address
       to: "rsspyker@gmail.com",
       cc: "rahulprajapati000@gmail.com",
       bcc: "alokdhiman018@gmail.com", // list of receivers

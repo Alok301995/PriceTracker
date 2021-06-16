@@ -175,22 +175,34 @@ const Home = (props) => {
           <div className="wrapper h-auto">
             <div className="items flex justify-center items-center">
               <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
-                <img className="w-16 h-8" src={Brands["Amazon"]} />
+                <img
+                  className="w-9 h-9 xl:w-10 xl:h-10"
+                  src={Brands["Amazon"]}
+                />
               </a>
             </div>
             <div className="items flex justify-center items-center">
               <a href="https://www.flipkart.com" target="_blank">
-                <img className="w-16 h-8" src={Brands["Flipkart"]} />
+                <img
+                  className="w-9 h-9 xl:w-10 xl:h-10"
+                  src={Brands["Flipkart"]}
+                />
               </a>
             </div>
             <div className="items flex justify-center items-center">
               <a href="https://paytmmall.com/" target="_blank" rel="noreferrer">
-                <img className="w-16 h-8" src={Brands["Paytm"]} />
+                <img
+                  className="w-9 h-9 xl:w-10 xl:h-10"
+                  src={Brands["Paytm"]}
+                />
               </a>
             </div>
             <div className="items flex justify-center items-center">
               <a href="https://www.nykaa.com/" target="_blank" rel="noreferrer">
-                <img className="w-16 h-8" src={Brands["Nykaa"]} />
+                <img
+                  className="w-9 h-9 xl:w-10 xl:h-10"
+                  src={Brands["Nykaa"]}
+                />
               </a>
             </div>
             <div className="items flex justify-center items-center">
@@ -199,7 +211,10 @@ const Home = (props) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img className="w-16 h-8" src={Brands["Snapdeal"]} />
+                <img
+                  className="w-9 h-9 xl:w-10 xl:h-10"
+                  src={Brands["Snapdeal"]}
+                />
               </a>
             </div>
             <div className="items flex justify-center items-center">
@@ -208,7 +223,10 @@ const Home = (props) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img className="w-16 h-8" src={Brands["Limeroad"]} />
+                <img
+                  className="w-9 h-9 xl:w-10 xl:h-10"
+                  src={Brands["Limeroad"]}
+                />
               </a>
             </div>
             <div className="items flex justify-center items-center">
@@ -217,7 +235,10 @@ const Home = (props) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img className="w-16 h-8" src={Brands["Reliance Digital"]} />
+                <img
+                  className="w-9 h-9 xl:w-10 xl:h-10"
+                  src={Brands["Reliance Digital"]}
+                />
               </a>
             </div>
           </div>

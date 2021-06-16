@@ -10,13 +10,13 @@ let transporter = nodemailer.createTransport({
   },
 });
 
-async function sendMailAlert(email, title) {
+async function sendMailAlert(email, title, name) {
   try {
     await transporter.sendMail({
       from: "service.getalrt@gmail.com", // sender address
       to: email, // list of receivers
       subject: "Price Drop Alert!", // Subject line
-      text: `Hello User ,Price Has been dropped on the Flipkart for ${title} .Thank you, Get Alrt`,
+      text: `Hello ${name} ,Your product ${title} is now available below your marked price.Thank you, Get Alrt`,
     });
   } catch (error) {
     console.log(error.message);

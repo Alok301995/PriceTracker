@@ -71,7 +71,8 @@ const cronJob = async () => {
             );
             sendMailAlert(
               newDoc["email"],
-              newDoc["Data"][changeIndex[k]]["title"]
+              newDoc["Data"][changeIndex[k]]["title"],
+              newDoc["name"]
             );
             newDoc["Data"][changeIndex[k]]["notified"] = true;
             await newDoc.save();
