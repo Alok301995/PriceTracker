@@ -33,20 +33,5 @@ async function sendResetLink(email, token) {
     console.log(error.message);
   }
 }
-async function sendContactInfo(email, text) {
-  console.log("inside mailer", email, text);
-  try {
-    await transporter.sendMail({
-      from: "getalrt.customerservice@gmail.com", // sender address
-      to: "rsspyker@gmail.com",
-      cc: "rahulprajapati000@gmail.com",
-      bcc: "alokdhiman018@gmail.com", // list of receivers
-      subject: "User Contact Alert", // Subject line
-      text: `Hi, ${email}  is trying to contact you regarding ${text} , kindly reply as soon as possible}`,
-    });
-  } catch (error) {
-    console.log(error.message);
-  }
-}
 
-module.exports = { sendMailAlert, sendResetLink, sendContactInfo };
+module.exports = { sendMailAlert, sendResetLink };

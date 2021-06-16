@@ -199,7 +199,9 @@ const Footer = () => {
               >
                 Send
               </button>
-              <div className="text-xs text-gray-300">{responseText}</div>
+              <div className="text-xs text-gray-300 text-center my-1 font-medium">
+                {responseText}
+              </div>
             </div>
           )}
 
