@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 import axios from "axios";
 import Loader from "react-loader-spinner";
+import ReactGA from "react-ga";
+import { withRouter } from "react-router-dom";
 // Image imports
 
 import Brands from "../../service/images";
 import bg from "../../assets/bg/bg_14.svg";
 import bg_desktop from "../../assets/bg/bg_17.svg";
+
+ReactGA.initialize("G-F0FHEK0QWM");
 
 const Home = (props) => {
   // Main Function
@@ -24,6 +28,7 @@ const Home = (props) => {
   const [desktopToggler, setDesktopToggler] = useState(null);
 
   useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
     let intialWidth = document.body.clientWidth;
     if (intialWidth > 1024) {
       setDesktopToggler(true);
@@ -353,4 +358,4 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+export default withRouter(Home);
