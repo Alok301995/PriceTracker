@@ -2,6 +2,7 @@ import axios from "axios";
 import "./style.css";
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
+import { set } from "react-ga";
 
 const Login = (props) => {
   // Mian
@@ -13,6 +14,8 @@ const Login = (props) => {
   const [resMessage, setResMessage] = useState("");
   const [forgetPassword, setForgetPassword] = useState(false);
   const [forgetEmail, setForgetEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [resetResponse, setResetResponse] = useState("");
 
   const LoginHandler = async (e) => {
     e.preventDefault();
@@ -52,13 +55,16 @@ const Login = (props) => {
   // Forget Email Handler
 
   const forgetEmailHanlder = async (e) => {
-    console.log(forgetEmail);
+    setResetResponse("");
     e.preventDefault();
     if (forgetEmail.length === 0) {
       return;
     }
-    const response = await axios.put("/forgetpassword", { email: email });
-    console.log(response.data);
+    const response = await axios.put("/resetpassword", {
+      email: forgetEmail,
+      password: newPassword,
+    });
+    setResetResponse(response.data["msg"]);
   };
 
   // Eof
@@ -109,12 +115,24 @@ const Login = (props) => {
                     }}
                     value={forgetEmail}
                   ></input>
+                  <input
+                    className="border border-gray-400 rounded-sm my-1 py-1 px-2  text-sm w-3/4 outline-none"
+                    type="password"
+                    placeholder="Enter New Password"
+                    onChange={(e) => {
+                      setNewPassword(e.target.value);
+                    }}
+                  ></input>
+
                   <button
                     className="text-white bg-blue-500 font-medium w-2/3  py-1 rounded-md my-2"
                     onClick={forgetEmailHanlder}
                   >
                     Continue
                   </button>
+                  <p className="text-center p-1  my-2" text-gray-700 text-xs>
+                    {resetResponse}
+                  </p>
                 </div>
               </div>
             ) : (

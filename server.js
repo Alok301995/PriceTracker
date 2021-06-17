@@ -18,7 +18,6 @@ const profile = require("./Routes/profile");
 const logout = require("./Routes/logout");
 const notify = require("./Routes/notify");
 const notifiactionCount = require("./Routes/notificationCount");
-const forgetPass = require("./Routes/forgetPassword");
 const resetPass = require("./Routes/resetPassword");
 const contactInfo = require("./Routes/contact");
 
@@ -36,7 +35,6 @@ server.use("/profileData", profile);
 server.use("/logout", logout);
 server.use("/notification", notify);
 server.use("/notificationCount", notifiactionCount);
-server.use("/forgetpassword", forgetPass);
 server.use("/resetpassword", resetPass);
 server.use("/contact", contactInfo);
 

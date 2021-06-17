@@ -34,6 +34,19 @@ const Footer = () => {
     <footer className="flex flex-col justify-center text-xs w-full p-2 ">
       <div className="flex flex-col xl:flex-row  p-2 justify-between">
         <div className=" flex xl:flex-col justify-center xl:w-1/3 ">
+          <div className="flex-1 flex justify-center p-1 items-center">
+            <span
+              className="cursor-pointer text-gray-200 font-medium xl:text-base"
+              onClick={() => {
+                setToggler(false);
+                setContact(false);
+                setAbout(false);
+                setHwt(true);
+              }}
+            >
+              How to use
+            </span>
+          </div>
           <div className="flex-1 flex justify-center p-1 items-center ">
             <span
               className="cursor-pointer text-gray-200 font-medium xl:text-base"
@@ -58,19 +71,6 @@ const Footer = () => {
               }}
             >
               About Us
-            </span>
-          </div>
-          <div className="flex-1 flex justify-center p-1 items-center">
-            <span
-              className="cursor-pointer text-gray-200 font-medium xl:text-base"
-              onClick={() => {
-                setToggler(false);
-                setContact(false);
-                setAbout(false);
-                setHwt(true);
-              }}
-            >
-              How to use
             </span>
           </div>
         </div>
