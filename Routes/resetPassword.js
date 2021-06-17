@@ -5,6 +5,9 @@ const bcrypt = require("bcrypt");
 
 route.put("/", async (req, res) => {
   const { email, password } = req.body;
+  if (email.length === 0 || password.length === 0) {
+    return res.send({ success: false, msg: "Empty feilds" });
+  }
 
   try {
     const user = await User.findOne({ email: email });
