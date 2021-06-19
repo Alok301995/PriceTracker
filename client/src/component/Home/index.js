@@ -10,7 +10,7 @@ import Brands from "../../service/images";
 import bg from "../../assets/bg/bg_14.svg";
 import bg_desktop from "../../assets/bg/bg_17.svg";
 
-ReactGA.initialize("G-F0FHEK0QWM");
+ReactGA.initialize("G-5M7X4WYR47");
 
 const Home = (props) => {
   // Main Function
