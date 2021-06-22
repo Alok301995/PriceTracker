@@ -33,14 +33,16 @@ function App() {
     <div className="App relative scrollbar-hide box-border min-h-screen flex flex-col justify-between  h-auto  font-raleway ">
       <Switch>
         <Route exact path="/">
-          <Header
-            login={login}
-            currentUser={currentUser}
-            homeHeader={homeHeader}
-          ></Header>
-          <Home></Home>
-          <div className="mt-16"></div>
-          <Footer></Footer>
+          <div className="flex flex-col">
+            <Header
+              login={login}
+              currentUser={currentUser}
+              homeHeader={homeHeader}
+            ></Header>
+            <Home></Home>
+            <div className="mt-16"></div>
+            <Footer></Footer>
+          </div>
         </Route>
         <Route exact path="/login">
           <Login setLogin={setLogin} setCurrentUser={setCurrentUser}></Login>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
 
-const Graph = ({ dateArray, priceArray }) => {
+const Graph = ({ dateArray, priceArray, index, selected }) => {
   const [graphToggle, setGraphToggle] = useState(false);
   const chartData = {
     labels: ["", ...dateArray],
@@ -26,7 +26,11 @@ const Graph = ({ dateArray, priceArray }) => {
     <div className="w-full">
       <div
         className="flex flex-col items-center mt-2"
-        onClick={() => setGraphToggle(!graphToggle)}
+        onClick={() => {
+          {
+            setGraphToggle(!graphToggle);
+          }
+        }}
       >
         {!graphToggle && (
           <svg

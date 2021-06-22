@@ -75,9 +75,9 @@ mongoose.connection.on("error", () => {
 cron.schedule("*/25 * * * *", async () => {
   console.time("slow code");
   console.log("cron running ");
-  // await cronJob();
-  console.timeEnd("slow code");
+  await cronJob();
   console.log("cron completed");
+  console.timeEnd("slow code");
 });
 
 // For production

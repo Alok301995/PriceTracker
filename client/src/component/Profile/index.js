@@ -17,6 +17,9 @@ const Profile = (props) => {
   const [notificationTask, setNotificationTask] = useState([]);
   const [onLoding, setOnLoading] = useState(true);
   const [searchStr, setSearchStr] = useState("");
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [userEmail, setUserEmail] = useState("");
+  const [notificationCount, setNotificationCount] = useState(0);
 
   useEffect(() => {
     async function fetchData() {
@@ -38,13 +41,37 @@ const Profile = (props) => {
           setTrackedTask(trackedTask);
           setOnLoading(false);
         }
+
+        setNotificationCount(response.data["notificationCount"]);
         setNotificationTask(notification.data);
       } catch (error) {
         console.log(error.message);
       }
     }
     fetchData();
+    async function authHandler() {
+      const response = await axios.get("/auth");
+      setUserEmail(response.data["email"]);
+    }
+    authHandler();
   }, []);
+
+  async function notificationReset() {
+    try {
+      const auth = await axios.get("/auth");
+      let email = auth.data["email"];
+      if (typeof email !== typeof undefined) {
+        const notificationResponse = await axios.post("/notificationCount", {
+          email: email,
+        });
+        if (notificationResponse.data["notificationClear"] === true) {
+          setNotificationCount(0);
+        }
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
 
   // End of Main
   return (
@@ -90,9 +117,15 @@ const Profile = (props) => {
                 setTracked(false);
                 setOngoing(false);
                 setNotification(true);
+                notificationReset();
               }}
             >
               Notification
+              {notificationCount !== 0 && (
+                <span className="ml-2 px-2 rounded-md text-white bg-red-600">
+                  {notificationCount}
+                </span>
+              )}
             </span>
           </div>
           <div className="flex justify-end items-center lg:w-1/2  ">
@@ -251,7 +284,7 @@ const Profile = (props) => {
               return element;
             }
           })
-          .map((element) => {
+          .map((element, index) => {
             return (
               <div className="flex flex-col my-2" key={element["_id"]}>
                 <div className="mx-2 text-xs flex justify-between items-center font-medium font-sans text-gray-300 px-2 md:w-10/12 md:mx-auto">

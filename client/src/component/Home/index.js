@@ -30,6 +30,7 @@ const Home = (props) => {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
     let intialWidth = document.body.clientWidth;
+
     if (intialWidth > 1024) {
       setDesktopToggler(true);
     } else {
@@ -43,6 +44,7 @@ const Home = (props) => {
         setDesktopToggler(false);
       }
     }
+
     window.addEventListener("resize", handler);
     return () => {
       window.removeEventListener("resize", handler);
@@ -255,7 +257,10 @@ const Home = (props) => {
           <div className="info w-4/5 sm:w-4/6 md:w-7/12 lg:w-6/12 xl:w-4/12  border rounded-md border-gray-300 animateInDiv">
             <div className="info__header flex justify-between py-2 px-2">
               <div className="text-xs">
-                {/* <img className="w-8  object-contain" src={Brands["Flipkart"]} /> */}
+                <img
+                  className=" w-8   xl:w-10 xl:h-10   object-contain"
+                  src={Brands[serverResponse[0]]}
+                />
               </div>
               {/* Close button */}
               <div

@@ -1,7 +1,7 @@
 const User = require("../Model/User");
 const axios = require("axios");
 const scraper = require("./scrapper");
-const sendMailAlert = require("../controller/nodemailer");
+const { sendMailAlert } = require("../controller/nodemailer");
 
 const cronJob = async () => {
   // find the whole document ana traverse if
