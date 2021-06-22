@@ -9,8 +9,8 @@ const Graph = ({ dateArray, priceArray, index, selected }) => {
       {
         label: "Price Chart",
         data: [0, ...priceArray],
-        backgroundColor: "#2c344425",
-        borderColor: "rgba(0, 0, 0,0.8)",
+        backgroundColor: "rgb(73, 88, 252)",
+        borderColor: "rgb(54, 149, 249)",
         borderWidth: 1,
         hoverBorderColor: "rgba(0, 0, 0 ,0.4)",
         pointRadius: 5,
