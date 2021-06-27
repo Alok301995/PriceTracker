@@ -13,10 +13,10 @@ const cronJob = async () => {
     // Task ,, finding document and updating document
     if (doc.length !== 0) {
       for (let i = 0; i < doc.length; i++) {
-        // console.log(doc[i]["email"]);
+        console.log(doc[i]["email"]);
         const changeIndex = [];
         const updatedPrice = [];
-        // const errorIndex = [];
+        const errorIndex = [];
         const dataItem = doc[i]["Data"]; // Data array of doc
         const newDoc = await User.findById(doc[i]["_id"]);
         const id = doc[i]["_id"]; // Document id
@@ -27,8 +27,9 @@ const cronJob = async () => {
             const notified = Boolean(dataItem[j]["notified"]);
             const trackingPrice = dataItem[j]["target_price"]; // Target Price
             const priceDroped = Boolean(dataItem[j]["pricedrop"]); // Price drop value (True or False )
+            const error = Number(dataItem[j]["error"]);
 
-            if (!notified) {
+            if (!notified && error === 0) {
               const currentPrice = await scraper(dataItem[j]["url"]); // Current price from server
               if (currentPrice !== undefined) {
                 if (!priceDroped && currentPrice !== undefined) {
@@ -55,7 +56,7 @@ const cronJob = async () => {
             }
           } catch (error) {
             // console.log("error at index", j);
-            // errorIndex.push(j);
+            errorIndex.push(j);
           }
         }
 
@@ -80,12 +81,12 @@ const cronJob = async () => {
           }
         }
 
-        // if (errorIndex.length !== 0) {
-        //   for (let k = 0; k < errorIndex.length; k++) {
-        //     newDoc["Data"][errorIndex[k]]["error"] = 1;
-        //   }
-        //   await newDoc.save();
-        // }
+        if (errorIndex.length !== 0) {
+          for (let k = 0; k < errorIndex.length; k++) {
+            newDoc["Data"][errorIndex[k]]["error"] = 1;
+          }
+          await newDoc.save();
+        }
       }
     }
   } catch (error) {

@@ -237,11 +237,36 @@ const Profile = (props) => {
                   </div> */}
                 </div>
                 <div className="ongoing__wrapper p-1 border bg-white shadow-sm mx-2 rounded-xl my-2 md:w-10/12 md:mx-auto">
-                  <div>
+                  <div className="flex justify-between">
                     <img
                       className="w-8 mx-1 my-1 lg:w-12"
                       src={BrandIcons[element["vendor"]]}
                     />
+                    {(function () {
+                      if (element["error"] === 1) {
+                        return (
+                          <span>
+                            <svg
+                              className="w-6 h-6"
+                              fill="none"
+                              stroke="black"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                              alt="Link can not be tracked"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={1.5}
+                                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
+                            </svg>
+                          </span>
+                        );
+                      } else {
+                        return false;
+                      }
+                    })()}
                   </div>
                   <div className="flex flex-col items-center px-2 ">
                     <div className="text-sm text-center  font-normal lg:text-lg">
