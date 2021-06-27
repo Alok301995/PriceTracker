@@ -13,7 +13,7 @@ const cronJob = async () => {
     // Task ,, finding document and updating document
     if (doc.length !== 0) {
       for (let i = 0; i < doc.length; i++) {
-        console.log(doc[i]["email"]);
+        // console.log(doc[i]["email"]);
         const changeIndex = [];
         const updatedPrice = [];
         // const errorIndex = [];
