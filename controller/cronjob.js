@@ -13,7 +13,7 @@ const cronJob = async () => {
     // Task ,, finding document and updating document
     if (doc.length !== 0) {
       for (let i = 0; i < doc.length; i++) {
-        // console.log(doc[i]["email"]);
+        console.log(doc[i]["email"]);
         const changeIndex = [];
         const updatedPrice = [];
         const dataItem = doc[i]["Data"]; // Data array of doc
@@ -27,30 +27,28 @@ const cronJob = async () => {
             const trackingPrice = dataItem[j]["target_price"]; // Target Price
             const priceDroped = Boolean(dataItem[j]["pricedrop"]); // Price drop value (True or False )
 
-            const currentPrice = await scraper(dataItem[j]["url"]); // Current price from server
-            // console.log(currentPrice);
-
-            // console.log(dataItem[j]["url"], currentPrice);
-            const trackingId = dataItem[j]["_id"]; // _id of the current document
-            if (currentPrice !== undefined) {
-              if (!notified && !priceDroped && currentPrice !== undefined) {
-                if (Number(currentPrice[2]) < Number(trackingPrice)) {
-                  changeIndex.push(j);
-
-                  updatedPrice.push(Number(currentPrice[2]));
-                } else {
-                  if (
-                    !Array.from(newDoc["Data"][j]["current_price"]).includes(
-                      Number(currentPrice[2])
-                    )
-                  ) {
-                    newDoc["Data"][j]["current_price"].push(
-                      Number(currentPrice[2])
-                    );
-                    newDoc["Data"][j]["dateArray"].push(
-                      new Date(Date.now()).toDateString()
-                    );
-                    await newDoc.save();
+            if (!notified) {
+              const currentPrice = await scraper(dataItem[j]["url"]); // Current price from server
+              console.log(currentPrice);
+              if (currentPrice !== undefined) {
+                if (!priceDroped && currentPrice !== undefined) {
+                  if (Number(currentPrice[2]) < Number(trackingPrice)) {
+                    changeIndex.push(j);
+                    updatedPrice.push(Number(currentPrice[2]));
+                  } else {
+                    if (
+                      !Array.from(newDoc["Data"][j]["current_price"]).includes(
+                        Number(currentPrice[2])
+                      )
+                    ) {
+                      newDoc["Data"][j]["current_price"].push(
+                        Number(currentPrice[2])
+                      );
+                      newDoc["Data"][j]["dateArray"].push(
+                        new Date(Date.now()).toDateString()
+                      );
+                      await newDoc.save();
+                    }
                   }
                 }
               }
@@ -59,8 +57,8 @@ const cronJob = async () => {
             // console.log("error at index", j);
           }
         }
+        console.log(changeIndex);
         if (changeIndex.length !== 0) {
-          console.log("inside change index");
           newDoc["notificationCount"] =
             Number(newDoc["notificationCount"]) + changeIndex.length;
           for (let k = 0; k < changeIndex.length; k++) {

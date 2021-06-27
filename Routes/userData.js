@@ -66,6 +66,7 @@ route.post("/", auth, async (req, res, next) => {
     dateArray: [new Date(Date.now()).toDateString()],
     pricedrop: false,
     notified: false,
+    error: 0,
   };
   try {
     const doc = await User.findOne({ email: email });
