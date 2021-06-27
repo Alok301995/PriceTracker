@@ -13,7 +13,7 @@ const cronJob = async () => {
     // Task ,, finding document and updating document
     if (doc.length !== 0) {
       for (let i = 0; i < doc.length; i++) {
-        console.log(doc[i]["email"]);
+        // console.log(doc[i]["email"]);
         const changeIndex = [];
         const updatedPrice = [];
         const dataItem = doc[i]["Data"]; // Data array of doc
@@ -21,15 +21,14 @@ const cronJob = async () => {
         const id = doc[i]["_id"]; // Document id
         // check whether notified  is true or not
         const count = doc[i]["notificationCount"];
-
-        try {
-          for (let j = 0; j < dataItem.length; j++) {
+        for (let j = 0; j < dataItem.length; j++) {
+          try {
             const notified = Boolean(dataItem[j]["notified"]);
             const trackingPrice = dataItem[j]["target_price"]; // Target Price
             const priceDroped = Boolean(dataItem[j]["pricedrop"]); // Price drop value (True or False )
 
             const currentPrice = await scraper(dataItem[j]["url"]); // Current price from server
-            console.log(currentPrice);
+            // console.log(currentPrice);
 
             // console.log(dataItem[j]["url"], currentPrice);
             const trackingId = dataItem[j]["_id"]; // _id of the current document
@@ -37,6 +36,7 @@ const cronJob = async () => {
               if (!notified && !priceDroped && currentPrice !== undefined) {
                 if (Number(currentPrice[2]) < Number(trackingPrice)) {
                   changeIndex.push(j);
+
                   updatedPrice.push(Number(currentPrice[2]));
                 } else {
                   if (
@@ -50,20 +50,17 @@ const cronJob = async () => {
                     newDoc["Data"][j]["dateArray"].push(
                       new Date(Date.now()).toDateString()
                     );
-
                     await newDoc.save();
                   }
                 }
               }
             }
+          } catch (error) {
+            // console.log("error at index", j);
           }
-        } catch (error) {
-          console.log(error.message);
-        } finally {
-          continue;
         }
-
         if (changeIndex.length !== 0) {
+          console.log("inside change index");
           newDoc["notificationCount"] =
             Number(newDoc["notificationCount"]) + changeIndex.length;
           for (let k = 0; k < changeIndex.length; k++) {
