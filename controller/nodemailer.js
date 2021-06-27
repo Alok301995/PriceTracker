@@ -16,7 +16,7 @@ async function sendMailAlert(email, title, name) {
       from: "service.getalrt@gmail.com", // sender address
       to: email, // list of receivers
       subject: "Price Drop Alert!", // Subject line
-      text: `Hello ${name} ,Your product ${title} is now available below your marked price.Thank you, Get Alrt`,
+      text: `Hello ${name} ,Your product ${title} is now available below your marked price.Check your notification in your profile to know more. Thank you, Get Alrt`,
     });
     console.log("Alert sent Successfully to --> ", email);
   } catch (error) {
