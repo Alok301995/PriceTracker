@@ -55,7 +55,7 @@ const cronJob = async () => {
             }
           } catch (error) {
             // console.log("error at index", j);
-            errorIndex.push(j);
+            // errorIndex.push(j);
           }
         }
 
