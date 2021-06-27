@@ -14,6 +14,10 @@ const dataSchema = mongoose.Schema({
   date: { type: Date, default: Date.now },
   pricedrop: Boolean,
   notified: Boolean,
+  error: {
+    type: Number,
+    default: 0,
+  },
 });
 const userSchema = mongoose.Schema({
   name: String,
