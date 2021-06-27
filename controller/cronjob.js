@@ -16,6 +16,7 @@ const cronJob = async () => {
         console.log(doc[i]["email"]);
         const changeIndex = [];
         const updatedPrice = [];
+        const errorIndex = [];
         const dataItem = doc[i]["Data"]; // Data array of doc
         const newDoc = await User.findById(doc[i]["_id"]);
         const id = doc[i]["_id"]; // Document id
@@ -55,9 +56,11 @@ const cronJob = async () => {
             }
           } catch (error) {
             // console.log("error at index", j);
+            errorIndex.push(j);
           }
         }
         console.log(changeIndex);
+        console.log(errorIndex);
         if (changeIndex.length !== 0) {
           newDoc["notificationCount"] =
             Number(newDoc["notificationCount"]) + changeIndex.length;
