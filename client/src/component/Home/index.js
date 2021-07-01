@@ -156,7 +156,7 @@ const Home = (props) => {
             value={url}
           />
           <button
-            className="search-btn bg-blue-500 font-semibold px-4 md:px-4 md:text-base lg:px-6 text-sm text-white rounded-r-sm rounded-l-none outline-none focus:outline-none hover:shadow-md "
+            className="search-btn bg-blue-600 font-semibold px-4 md:px-4 md:text-base lg:px-6 text-sm text-white rounded-r-sm rounded-l-none outline-none focus:outline-none hover:shadow-md "
             onClick={onUrlSubmit}
           >
             {responseLoading ? (

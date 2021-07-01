@@ -113,18 +113,6 @@ const scrapper = async (url) => {
         return Promise.resolve(["Lime Road", newTitle, Number(price)]);
       }
     }
-    //  Chroma
-    // else if (url.includes("koovs")) {
-    //   let title = html(".product-name").text().trim();
-    //   let price = html(".pd-discount-price").text();
-    //   // console.log(price);
-    //   if (price !== undefined || price.length !== 0) {
-    //     price = price.trim();
-    //     price = price.split("₹")[1].trim();
-    //     price = price.replace(/\,/g, "");
-    //     return Promise.resolve(["Koovs", title, Number(price)]);
-    //   }
-    // }
     // Reliance Digital
     else if (url.includes("reliancedigital")) {
       let title = html(".pdp__title").text().trim();
